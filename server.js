@@ -8,6 +8,7 @@ const categoryRouter = require('./routes/category')
 const productRouter = require('./routes/product')
 const billRouter = require('./routes/bill')
 const dashboardRouter = require('./routes/dashboard')
+const port = process.env.PORT || 3000
 app.use(cors())
 app.use(express.json())
 app.use('/user', userRouter)
@@ -15,6 +16,9 @@ app.use('/category', categoryRouter)
 app.use('/product', productRouter)
 app.use('/bill', billRouter)
 app.use('/dashboard', dashboardRouter)
+app.get('/',(req,res) => {
+    res.send('cafe management system')
+})
 app.listen(3000, () => {
     console.log('server is on port 3000')
 })
