@@ -19,7 +19,7 @@ app.use('/dashboard', dashboardRouter)
 app.get('/',(req,res) => {
     res.send('cafe management system')
 })
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('server is on port 3000')
 })
 
