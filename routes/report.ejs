@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+    <style>
+        table {
+            font-family: 'Arial';
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align:center">Cafe Management System</h3>
+    <table>
+        <tr>
+            <th>Name: <%= name %>
+            </th>
+            <th>Email: <%= email %>
+            </th>
+        </tr>
+        <tr>
+            <th>Contactnumber: <%= contactnumber %>
+            </th>
+            <th>Paymentmethod: <%= paymentmethod %>
+            </th>
+        </tr>
+    </table>
+    <h3>Product Details</h3>
+    <table>
+        <tr>
+            <th>Name:</th>
+            <th>Category:</th>
+            <th>Quantity:</th>
+            <th>Price:</th>
+            <th>Subtotal</th>
+        </tr>
+        <% if(productDetails.length > 0) {
+            %> <% productDetails.forEach(product => {
+                %> <tr>
+                    <td><%= product.name %></td>
+                    <td><%= product.category %></td>
+                    <td><%= product.quantity %></td>
+                    <td><%= product.price %></td>
+                    <td><%= product.total %></td>
+                </tr>
+            <%})%>
+        <%}%>
+    </table>
+    <h3>Total: <%= totalAmount %></h3>
+    <h3>Thank you!</h3>
+</body>
+
+</html>
